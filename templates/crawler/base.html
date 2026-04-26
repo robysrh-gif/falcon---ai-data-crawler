@@ -270,8 +270,8 @@
 							<span class="menu-text lang" key="calendar">Calendar</span>
 						</a>
 					</div>
-					<div class="menu-item">
-						<a href="settings.html" class="menu-link">
+					<div class="menu-item {% if settings_page %}active{% endif %}">
+						<a href="{% url 'crawler:settings' %}" class="menu-link">
 <span class="menu-icon"><i class="fa fa-cog"></i></span>
 							<span class="menu-text lang" key="setting">Settings</span>
 						</a>

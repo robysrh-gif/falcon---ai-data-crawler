@@ -270,6 +270,36 @@ def api(request, keyword):
 
 
 @login_required
+def settings_view(request):
+    userprofile = UserProfile.objects.get_or_create(user=request.user)[0]
+    notifications = Notifications.objects.filter(user=userprofile).order_by('-pub_date')
+    unread = notifications.filter(read=False)
+
+    if request.method == 'POST':
+        concurrency = request.POST.get('concurrency')
+        recent_link = request.POST.get('recent_link')
+
+        if concurrency:
+            userprofile.concurrency = int(concurrency)
+        if recent_link:
+            userprofile.recent_link = int(recent_link)
+
+        if 'picture' in request.FILES:
+            userprofile.picture = request.FILES['picture']
+
+        userprofile.save()
+        messages.success(request, 'Settings updated successfully.', extra_tags='settings_update')
+
+    context = {
+        'settings_page': True,
+        'userprofile': userprofile,
+        'notifications': notifications[:5],
+        'unread_count': len(unread),
+    }
+    return render(request, 'crawler/settings.html', context=context)
+
+
+@login_required
 def process(request):
     """
 
