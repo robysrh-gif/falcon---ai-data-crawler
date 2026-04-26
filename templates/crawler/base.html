@@ -204,7 +204,7 @@
 					<div class="dropdown-menu dropdown-menu-right mr-lg-3">
 <a class="dropdown-item d-flex align-items-center lang" key="profile" href="#">Edit Profile <i class="fa fa-user-circle fa-fw ml-auto text-gray-400 f-s-16"></i></a>
 						<a class="dropdown-item d-flex align-items-center lang" key="inbox" href="#">Inbox <i class="fa fa-envelope fa-fw ml-auto text-gray-400 f-s-16"></i></a>
-						<a class="dropdown-item d-flex align-items-center lang" key="calendar" href="#">Calendar <i class="fa fa-calendar-alt fa-fw ml-auto text-gray-400 f-s-16"></i></a>
+						<a class="dropdown-item d-flex align-items-center lang" key="calendar" href="{% url 'crawler:calendar' %}">Calendar <i class="fa fa-calendar-alt fa-fw ml-auto text-gray-400 f-s-16"></i></a>
 						<a class="dropdown-item d-flex align-items-center lang" key="setting" href="#">Setting <i class="fa fa-wrench fa-fw ml-auto text-gray-400 f-s-16"></i></a>
 						<div class="dropdown-divider"></div>
 <a class="dropdown-item d-flex align-items-center lang" key="logout" href="{% url 'auth_logout' %}">Log Out <i class="fa fa-toggle-off fa-fw ml-auto text-gray-400 f-s-16"></i></a>
@@ -243,14 +243,14 @@
 						</a>
 					</div>
 					<div class="menu-item">
-						<a href="/admin" class="menu-link">
+						<a href="/admin/" class="menu-link">
 <span class="menu-icon"><i class="fa fa-fire"></i></span>
 							<span class="menu-text lang" key="admin">Admin</span>
 						</a>
 					</div>
 
 					<div class="menu-item">
-						<a href="map.html" class="menu-link">
+						<a href="#" class="menu-link">
 <span class="menu-icon"><i class="fa fa-map-marker-alt"></i></span>
 							<span class="menu-text map lang" key="map">Map</span>
 						</a>
@@ -259,7 +259,7 @@
 					<div class="menu-divider"></div>
 					<div class="menu-header lang" key="users">Users</div>
 					<div class="menu-item">
-						<a href="profile.html" class="menu-link">
+						<a href="#" class="menu-link">
 <span class="menu-icon"><i class="fa fa-user-circle"></i></span>
 							<span class="menu-text lang" key="profile">Profile</span>
 						</a>
@@ -271,13 +271,13 @@
 						</a>
 					</div>
 					<div class="menu-item">
-						<a href="settings.html" class="menu-link">
+						<a href="#" class="menu-link">
 <span class="menu-icon"><i class="fa fa-cog"></i></span>
 							<span class="menu-text lang" key="setting">Settings</span>
 						</a>
 					</div>
 					<div class="menu-item">
-						<a href="helper.html" class="menu-link">
+						<a href="#" class="menu-link">
 <span class="menu-icon"><i class="fa fa-question-circle"></i></span>
 							<span class="menu-text lang" key="helper">Helper</span>
 						</a>
